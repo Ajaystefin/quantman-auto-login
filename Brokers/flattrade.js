@@ -30,7 +30,7 @@ const doLoginFlattrade = async (username, password, pin) => {
 
   console.log(`step 3 password completed `);
 
-  await delay(1000);
+  await delay(2000);
 
   (await driver.findElement(By.id('pan'))).sendKeys(pin);
 
