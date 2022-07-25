@@ -31,16 +31,9 @@ const doLoginFlattrade = async (username, password, pin) => {
   console.log(`step 3 password completed `);
 
   await delay(4000);
+  (await driver.findElement(By.xpath("//*[@id="pan"]"))).sendKeys(pin);
+//   (await driver.findElement(By.id('pan'))).sendKeys(pin);
   
-  try {
-   (await driver.findElement(By.id('pan'))).sendKeys(pin);
-  }
-  catch(ex)
-  {
-    await delay(10000);
-   (await driver.findElement(By.id('pan'))).sendKeys(pin);
-  }
-
   console.log(`step 4 pin completed`);
 
   await delay(3000);
